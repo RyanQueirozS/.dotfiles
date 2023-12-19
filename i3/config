@@ -207,39 +207,39 @@ bindsym $mod+Shift+e mode "exit: [l]ogout, [r]eboot, [p]oweroff"
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l dim
 
 # set rose-pine primary colors 
-set $bg #1c1a2b
-set $red #831232
-set $green #265760
-set $yellow #6e6a86
-set $blue #32728d
-set $purple #ebbcba
-set $gray #a89984
-set $aqua #908caa
-set $darkgray #38195d
+set $bg #0a0e14
+set $red #ff3333
+set $green #c2d94c
+set $yellow #ffa759
+set $blue #5ccfe6
+set $purple #5c6773
+set $gray #5c6773
+set $aqua #79dac8
+set $darkgray #323437
 
 # i3-gaps
  for_window [class=".*"] border pixel 3 #*
-gaps inner 6
-gaps outer 3
-#
-# i3-radius
-smart_borders on
-smart_borders no_gaps
+# gaps inner 6
+# gaps outer 3
+# #
+# # i3-radius
+# smart_borders on
+# smart_borders no_gaps
 
 # Bar
  bar {
-   status_command i3status -c /home/$USER/.config/i3status/i3status.conf
-     separator_symbol "|"
-     position top
-     font pango:JetBrains mono 9
-     colors {
-       background $bg
-         statusline $purple
-         focused_workspace    $aqua $aqua $darkgray
-         inactive_workspace   $darkgray $darkgray $yellow
-         active_workspace     $darkgray $darkgray $yellow
-         urgent_workspace     $red $red $bg
-     }
+     status_command i3status -c /home/$USER/.config/i3status/i3status.conf
+         separator_symbol "|"
+         position top
+         font pango:JetBrains mono 9
+         colors {
+             background $bg
+                 statusline $yellow
+                 focused_workspace    $aqua $aqua $darkgray
+                 inactive_workspace   $darkgray $darkgray $yellow
+                 active_workspace     $darkgray $darkgray $yellow
+                 urgent_workspace     $red $red $bg
+         }
  }
 
 # class                 border|backgr|text|indicator|child_border
@@ -256,4 +256,4 @@ exec -q <notification daemon>
 exec_always --no-startup-id dunst -config "~/.config/dunst/dunstrc"
 
 # picom
-exec picom -b
+# exec picom -b

@@ -3,7 +3,7 @@ My most important config files
 
 ## I use vim and arch btw
 I used packer nvim, but because it got discontinued and lazy is now the big
-think, i've updated my distro. I primarilly use it for C++ and sometimes Golang.
+think, i've updated my distro. I primarilly use it for C++ and Golang.
 
 In regards to Arch. I use i3 Window Manager with xorg, it's simple and has just what I need.
 
