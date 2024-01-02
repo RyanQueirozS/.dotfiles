@@ -11,6 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("ryanconf.core.commands")
 require("ryanconf.core.remap")
 require("ryanconf.core.set")
 require("lazy").setup("ryanconf.plugins")

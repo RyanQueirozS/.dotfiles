@@ -82,17 +82,20 @@ local cmp = require("cmp")
 cmp.setup({
     sources = {
         { name = "nvim_lsp" },
+        { name = "luasnip" },
     },
     mapping = cmp.mapping.preset.insert({
         -- Enter key confirms completion item
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm{ select = true },
 
-        -- Ctrl + space triggers completion menu
-        ["<C-Space>"] = cmp.mapping.complete(),
     }),
     snippet = {
-        expand = function()
-            require("luasnip").lsp_expand()
+          expand = function(args)
+            local luasnip = require("luasnip")
+            if not luasnip then
+                return
+            end
+            luasnip.lsp_expand(args.body)
         end,
     },
 })

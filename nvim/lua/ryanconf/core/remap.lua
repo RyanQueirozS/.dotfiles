@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<cmd> NvimTreeFindFileToggle<CR>") -- replaced with nvim tree
+vim.keymap.set("n", "<leader>pc", "<cmd> NvimTreeCollapse<CR>") -- replaced with nvim tree
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -17,7 +18,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("x", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -35,9 +36,16 @@ vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 
 --Random stuff
-vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
-vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+vim.keymap.set("n", "<leader>gr", function()
+	vim.lsp.buf.references()
+end, opts)
+vim.keymap.set("n", "<leader>rn", function()
+	vim.lsp.buf.rename()
+end, opts)
 
 --Dap
 vim.keymap.set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>")
 vim.keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>")
+
+--UndoTree
+vim.keymap.set("n", "<leader>ud", "<cmd> UndotreeToggle <CR>")

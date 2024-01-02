@@ -31,4 +31,4 @@ vim.opt.colorcolumn = "81"
 
 -- colorscheme
 -- yes i use one of the default colorscheme
-vim.cmd.colorscheme('industry')
+vim.cmd.colorscheme("koehler")
